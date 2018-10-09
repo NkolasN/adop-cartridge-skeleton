@@ -10,8 +10,8 @@ def projectScmNamespace = "${SCM_NAMESPACE}"
 
 // Variables
 // **The git repo variables will be changed to the users' git repositories manually in the Jenkins jobs**
-def skeletonAppgitRepo = "YOUR_APPLICATION_REPO"
-def regressionTestGitRepo = "YOUR_REGRESSION_TEST_REPO"
+def skeletonAppgitRepo = "test-job"
+def regressionTestGitRepo = "test-job"
 
 // ** The logrotator variables should be changed to meet your build archive requirements
 def logRotatorDaysToKeep = 7
