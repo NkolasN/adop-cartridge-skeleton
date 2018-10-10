@@ -10,8 +10,12 @@ def projectScmNamespace = "${SCM_NAMESPACE}"
 
 // Variables
 // **The git repo variables will be changed to the users' git repositories manually in the Jenkins jobs**
-def skeletonAppgitRepo = "test-project"
-def regressionTestGitRepo = "test-project"
+def referenceAppgitRepo = "spring-petclinic"
+def regressionTestGitRepo = "adop-cartridge-java-regression-tests"
+def scmUrl = scmProvider.getScmUrl()
+def referenceAppGitUrl = scmUrl + "${SCM_NAMESPACE}/" + referenceAppgitRepo
+def regressionTestGitUrl = scmUrl + "${SCM_NAMESPACE}/" + regressionTestGitRepo
+
 
 // ** The logrotator variables should be changed to meet your build archive requirements
 def logRotatorDaysToKeep = 7
@@ -51,10 +55,11 @@ buildAppJob.with{
     artifactDaysToKeep(logRotatorArtifactsNumDaysToKeep)
     artifactNumToKeep(logRotatorArtifactsNumToKeep)
   }
-  scm scmProvider.get(projectScmNamespace, skeletonAppgitRepo, "*/master", "adop-jenkins-master", null)
+  scm scmProvider.get(projectScmNamespace, referenceAppgitRepo, "*/master", "adop-jenkins-master", null)
   environmentVariables {
       env('WORKSPACE_NAME',workspaceFolderName)
       env('PROJECT_NAME',projectFolderName)
+      env('SCM_URL',scmUrl)
   }
   label("docker")
   wrappers {
@@ -63,7 +68,7 @@ buildAppJob.with{
     maskPasswords()
     sshAgent("adop-jenkins-master")
   }
-  triggers scmProvider.trigger(projectScmNamespace, skeletonAppgitRepo, "master")
+  triggers scmProvider.trigger(projectScmNamespace, referenceAppgitRepo, "master")
   steps {
     shell('''## YOUR BUILD STEPS GO HERE'''.stripMargin())
   }
