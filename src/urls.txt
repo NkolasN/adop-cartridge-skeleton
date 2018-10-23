@@ -1,6 +1,6 @@
-https://gitlab.com/Tails/tails.git
+ssh://gitlab.com/Tails/tails.git
 https://gerrit.googlesource.com/gitblit
 https://github.com/Accenture/adop-cartridge-java-environment-template.git
 https://opensource.ncsa.illinois.edu/bitbucket/scm/u3d/3dutilities.git
-htetps://github.com/Accenture/adop-cartridge-java-regression-tests.git
+https://github.com/Accenture/adop-cartridge-java-regression-tests.git
 https://github.com/Accenture/spring-petclinic.git
