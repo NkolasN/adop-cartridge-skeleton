@@ -55,7 +55,7 @@ buildAppJob.with{
     artifactDaysToKeep(logRotatorArtifactsNumDaysToKeep)
     artifactNumToKeep(logRotatorArtifactsNumToKeep)
   }
-  scm scmProvider.get(projectScmNamespace, referenceAppgitRepo, "*/master", "gitlab-token-new", null)
+  scm scmProvider.get(projectScmNamespace, referenceAppgitRepo, "*/master", "1f204e6e-de79-4651-8017-ee25f521b22b", null)
   environmentVariables {
       env('WORKSPACE_NAME',workspaceFolderName)
       env('PROJECT_NAME',projectFolderName)
