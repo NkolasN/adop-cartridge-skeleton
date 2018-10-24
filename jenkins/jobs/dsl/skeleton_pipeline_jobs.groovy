@@ -219,7 +219,7 @@ regressionTestJob.with{
     artifactDaysToKeep(logRotatorArtifactsNumDaysToKeep)
     artifactNumToKeep(logRotatorArtifactsNumToKeep)
   }
-  scm scmProvider.get(projectFolderName, regressionTestGitRepo, "*/master", "adop-jenkins-master", null)
+  scm scmProvider.get(projectFolderName, regressionTestGitRepo, "*/master", "gitlab-token-new", null)
   wrappers {
     preBuildCleanup()
     injectPasswords()
