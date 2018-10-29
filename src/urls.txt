@@ -3,4 +3,4 @@ https://gerrit.googlesource.com/gitblit
 https://github.com/Accenture/adop-cartridge-java-environment-template.git
 https://opensource.ncsa.illinois.edu/bitbucket/scm/u3d/3dutilities.git
 https://github.com/Accenture/adop-cartridge-java-regression-tests.git
-https://github.com/Accenture/spring-petclinic
+https://github.com/Accenture/spring-petclinic.git
